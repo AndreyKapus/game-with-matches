@@ -1,11 +1,15 @@
+import {GameMatches, SelectionBtn, SelectionBtnWrapper, InterfaceWrapper} from './GemeInterface.styled'
+
 const GameInterface = ({matches, onHandleMachesSelection}) => {
     return (
-        <div>
-        <p>Matches Remaining: {matches}</p>
-        <button onClick={() => onHandleMachesSelection(1)}>Take 1 Match</button>
-        <button onClick={() => onHandleMachesSelection(2)}>Take 2 Matches</button>
-        <button onClick={() => onHandleMachesSelection(3)}>Take 3 Matches</button>
-      </div>
+        <InterfaceWrapper>
+            <GameMatches>Matches Remaining: {matches}</GameMatches>
+            <SelectionBtnWrapper>
+                <SelectionBtn onClick={() => onHandleMachesSelection(1)}>Take 1 Match</SelectionBtn>
+                <SelectionBtn onClick={() => onHandleMachesSelection(2)}>Take 2 Matches</SelectionBtn>
+                <SelectionBtn onClick={() => onHandleMachesSelection(3)}>Take 3 Matches</SelectionBtn>
+            </SelectionBtnWrapper>  
+        </InterfaceWrapper>
     )
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
-import {GameTitle, GameWrapper} from './Game.styled'
+import {GameTitle, GameWrapper, GamePlayer} from './Game.styled'
 
 const Game = () => {
   const [matches, setMatches] = useState(25);
@@ -52,7 +52,7 @@ const Game = () => {
   return (
     <GameWrapper>
       <GameTitle>Match Game</GameTitle>
-      {!winner && <p>{currentPlayer} Player turn</p>}
+      {!winner && <GamePlayer>{currentPlayer} Player turn</GamePlayer>}
       {winner ? (
           <GameOver winner={winner} onRestartGame={handleRestart}/>
       ) : (
