@@ -24,7 +24,7 @@ const Game = () => {
     setTimeout(() => {
       handleMatchSelection(optimalMove);
       setDisabled(false)
-    }, 3000);
+    }, 1000);
   };
 
   const calculateOptimalMove = (remainingMatches) => {
