@@ -7,7 +7,8 @@ const Game = () => {
   const [matches, setMatches] = useState(25);
   const [currentPlayer, setCurrentPlayer] = useState(1);
   const [winner, setWinner] = useState(null);
-  const [playerMatches, setPlayerMatches] = useState(null)
+  const [playerMatches, setPlayerMatches] = useState(null);
+  const [disabled, setDisabled] = useState(false)
 
     const handleMatchSelection = (numMatches) => {
     if (matches - numMatches >= 0 && !winner) {
@@ -19,9 +20,11 @@ const Game = () => {
 
   const makeAIMove = () => {
     const optimalMove = calculateOptimalMove(matches);
+    setDisabled(true)
     setTimeout(() => {
       handleMatchSelection(optimalMove);
-    }, 1000);
+      setDisabled(false)
+    }, 3000);
   };
 
   const calculateOptimalMove = (remainingMatches) => {
@@ -56,7 +59,7 @@ const Game = () => {
       {winner ? (
           <GameOver winner={winner} onRestartGame={handleRestart}/>
       ) : (
-        <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection}/>
+        <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
     </GameWrapper>
   );
