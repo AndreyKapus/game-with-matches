@@ -1,15 +1,33 @@
 import styled from '@emotion/styled'
 
-export const GameOverTitle = styled.h2`
+export const GameOverWrapper = styled.div`
     margin-top: 30px;
+`;
+
+export const GameOverTitleWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const GameOverTitle = styled.h2`
+    margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 28px;
-    Font-weight: 500;
+    margin-right: 10px;
+    font-size: 30px;
+    Font-weight: 700;
+`;
+
+export const WinnerWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 `;
 
 export const Winner = styled.p`
-    font-size: 20px;
-    margin-top: 20px;
+    font-size: 24px;
+    margin-top: 0px;
     margin-bottom: 0px;
 `;
 
@@ -22,4 +40,5 @@ export const RestartBtn = styled.button`
     border: none;
     border-radius: 5px;
     font-size: 18px;
-`
+`;
+
