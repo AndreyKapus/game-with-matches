@@ -38,31 +38,26 @@ const Game = () => {
   };
 
   const calculateOptimalMove = (remainingMatches) => {
+    if (remainingMatches === 5 && playerMatches === 10) {
+      return 1;
+    }
     if(aiMatches % 2 === 0 && remainingMatches >= 2) {
       return 2;
     };
     if(aiMatches % 2 !== 0 && remainingMatches >= 3) {
       return 3;
     };
-    if(remainingMatches < 2) {
+    if(remainingMatches <= 2) {
       return 1;
-    }
-    // if (remainingMatches <= 3) {
-    //   return remainingMatches;
-    // }
-
-    // const maxAIMatches = Math.min(3, remainingMatches - 1);
-    // const optimalMove = (remainingMatches - maxAIMatches) % 2 === 0 ? maxAIMatches : maxAIMatches - 1;
-    // return optimalMove;
-
-    // const optimalMove = (remainingMatches - 1) % 4;
-    // return optimalMove === 0 ? 1 : optimalMove;
+    };
   };
 
   const handleRestart = () => {
     setMatches(25);
     setCurrentPlayer('Your');
     setWinner(null);
+    setAiMatches(0);
+    setPlayerMatches(0);
   };
 
 
@@ -92,8 +87,7 @@ const Game = () => {
       ) : (
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
-      <div>AI: {aiMatches}</div>
-      <div>Player: {playerMatches}</div>
+      <p>Player matches: {playerMatches}</p>
     </GameWrapper>
   );
 };
