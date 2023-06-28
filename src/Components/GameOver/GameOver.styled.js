@@ -40,5 +40,13 @@ export const RestartBtn = styled.button`
     border: none;
     border-radius: 5px;
     font-size: 18px;
+    cursor: pointer;
+    :hover {
+        transform: scale(1.1);
+        background-color: #C377FF;
+      }
+      transition-property: transform, background-color;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
 `;
 
