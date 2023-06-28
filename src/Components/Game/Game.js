@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
-import {GameTitle, GameWrapper, GamePlayer} from './Game.styled'
+import {GameTitle, GameWrapper, GamePlayer} from './Game.styled';
+import Emoji from 'react-emojis';
 
 const Game = () => {
   const [matches, setMatches] = useState(25);
-  const [currentPlayer, setCurrentPlayer] = useState(1);
+  const [currentPlayer, setCurrentPlayer] = useState('Your');
   const [winner, setWinner] = useState(null);
   const [playerMatches, setPlayerMatches] = useState(null);
   const [disabled, setDisabled] = useState(false)
@@ -14,7 +15,7 @@ const Game = () => {
     if (matches - numMatches >= 0 && !winner) {
       setMatches(matches - numMatches);
       setPlayerMatches(numMatches)
-      setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+      setCurrentPlayer(currentPlayer === 'Your' ? 'AI' : 'Your');
     }
   };
 
@@ -38,7 +39,7 @@ const Game = () => {
 
   const handleRestart = () => {
     setMatches(25);
-    setCurrentPlayer(1);
+    setCurrentPlayer('Your');
     setWinner(null);
   };
 
@@ -46,7 +47,7 @@ const Game = () => {
   useEffect(() => {
     if (matches === 0) {
       setWinner(matches === 0 && playerMatches % 2 === 0 ? 'You' : 'AI');
-    } else if (currentPlayer === 2) {
+    } else if (currentPlayer === 'AI') {
       makeAIMove();
     }
   }, [currentPlayer, matches, playerMatches]);
@@ -55,7 +56,15 @@ const Game = () => {
   return (
     <GameWrapper>
       <GameTitle>Match Game</GameTitle>
-      {!winner && <GamePlayer>{currentPlayer} Player turn</GamePlayer>}
+      {!winner && 
+        <diV>
+          <GamePlayer>{currentPlayer} turn</GamePlayer>
+            {currentPlayer === 'Your' ? 
+              <Emoji emoji="smiling-face-with-sunglasses" size={40} lineHeight="inherit"/> :
+              <Emoji emoji="robot" size={40} lineHeight="inherit"/>
+            }
+        </diV>   
+      }
       {winner ? (
           <GameOver winner={winner} onRestartGame={handleRestart}/>
       ) : (

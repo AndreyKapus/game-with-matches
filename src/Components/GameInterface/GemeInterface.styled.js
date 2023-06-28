@@ -6,7 +6,7 @@ export const InterfaceWrapper = styled.div`
 
 export const GameMatches = styled.p`
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 `;
 
 export const SelectionBtnWrapper = styled.div`

@@ -15,7 +15,7 @@ export const GameTitle = styled.h1`
 
 export const GamePlayer = styled.p`
     margin-top: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     font-size: 20px;
     font-weight: 500;
 `;
