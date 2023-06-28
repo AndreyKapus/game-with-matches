@@ -8,13 +8,22 @@ const Game = () => {
   const [matches, setMatches] = useState(25);
   const [currentPlayer, setCurrentPlayer] = useState('Your');
   const [winner, setWinner] = useState(null);
-  const [playerMatches, setPlayerMatches] = useState(null);
+  const [playerMatches, setPlayerMatches] = useState(0);
+  const [aiMatches, setAiMatches] = useState(0)
   const [disabled, setDisabled] = useState(false)
 
     const handleMatchSelection = (numMatches) => {
     if (matches - numMatches >= 0 && !winner) {
       setMatches(matches - numMatches);
-      setPlayerMatches(numMatches)
+      if(currentPlayer === 'Your') {
+        const takenByPlayerMatches = playerMatches + numMatches
+        setPlayerMatches(takenByPlayerMatches)
+      } 
+      if(currentPlayer === 'AI') {
+        const takenByAiMatches = aiMatches + numMatches
+        setAiMatches(takenByAiMatches)
+      };
+      
       setCurrentPlayer(currentPlayer === 'Your' ? 'AI' : 'Your');
     }
   };
@@ -29,12 +38,25 @@ const Game = () => {
   };
 
   const calculateOptimalMove = (remainingMatches) => {
-    if (remainingMatches <= 3) {
-      return remainingMatches;
+    if(aiMatches % 2 === 0 && remainingMatches >= 2) {
+      return 2;
+    };
+    if(aiMatches % 2 !== 0 && remainingMatches >= 3) {
+      return 3;
+    };
+    if(remainingMatches < 2) {
+      return 1;
     }
+    // if (remainingMatches <= 3) {
+    //   return remainingMatches;
+    // }
 
-    const optimalMove = (remainingMatches - 1) % 4;
-    return optimalMove === 0 ? 1 : optimalMove;
+    // const maxAIMatches = Math.min(3, remainingMatches - 1);
+    // const optimalMove = (remainingMatches - maxAIMatches) % 2 === 0 ? maxAIMatches : maxAIMatches - 1;
+    // return optimalMove;
+
+    // const optimalMove = (remainingMatches - 1) % 4;
+    // return optimalMove === 0 ? 1 : optimalMove;
   };
 
   const handleRestart = () => {
@@ -46,7 +68,7 @@ const Game = () => {
 
   useEffect(() => {
     if (matches === 0) {
-      setWinner(matches === 0 && playerMatches % 2 === 0 ? 'You' : 'AI');
+      setWinner(matches === 0 && playerMatches % 2 === 0 && aiMatches % 2 !== 0 ? 'You' : 'AI');
     } else if (currentPlayer === 'AI') {
       makeAIMove();
     }
@@ -70,6 +92,8 @@ const Game = () => {
       ) : (
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
+      <div>AI: {aiMatches}</div>
+      <div>Player: {playerMatches}</div>
     </GameWrapper>
   );
 };
