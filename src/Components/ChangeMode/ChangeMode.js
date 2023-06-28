@@ -1,10 +1,10 @@
 import {PlayerModeBtn} from './ChangeMode.styled'
 
-const ChangeMode = ({onChangeModeToPlayer, onChangeModeToAi}) => {
+const ChangeMode = ({onChangeModeToPlayer, onChangeModeToAi, isActive}) => {
     return(
         <>
-            <PlayerModeBtn onClick={onChangeModeToPlayer}>Your first move</PlayerModeBtn>
-            <PlayerModeBtn onClick={onChangeModeToAi}>AI first move</PlayerModeBtn>
+            <PlayerModeBtn onClick={onChangeModeToPlayer} isActive={isActive}>Your first move</PlayerModeBtn>
+            <PlayerModeBtn onClick={onChangeModeToAi} isActive={isActive}>AI first move</PlayerModeBtn>
         </>
     )
 };

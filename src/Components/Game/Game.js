@@ -11,7 +11,8 @@ const Game = () => {
   const [winner, setWinner] = useState(null);
   const [playerMatches, setPlayerMatches] = useState(0);
   const [aiMatches, setAiMatches] = useState(0)
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
     const handleMatchSelection = (numMatches) => {
     if (matches - numMatches >= 0 && !winner) {
@@ -70,18 +71,20 @@ const Game = () => {
   }, [currentPlayer, matches, playerMatches]);
 
   const changeCurrentModeToAi = () => {
-    setCurrentPlayer('AI')
+    setCurrentPlayer('AI');
+    setIsActive(true);
   };
 
   const changeCurrentModeToPlayer = () => {
-    setCurrentPlayer('Your')
+    setCurrentPlayer('Your');
+    setIsActive(true)
   };
 
 
   return (
     <GameWrapper>
       <GameTitle>Match Game</GameTitle>
-      <ChangeMode onChangeModeToAi={changeCurrentModeToAi} onChangeModeToPlayer={changeCurrentModeToPlayer}/>
+      <ChangeMode onChangeModeToAi={changeCurrentModeToAi} onChangeModeToPlayer={changeCurrentModeToPlayer} isActive={isActive}/>
       {!winner && 
         <diV>
           <GamePlayer>{currentPlayer} turn</GamePlayer>
