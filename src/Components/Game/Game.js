@@ -3,6 +3,7 @@ import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
 import {GameTitle, GameWrapper, GamePlayer} from './Game.styled';
 import Emoji from 'react-emojis';
+import ChangeMode from '../ChangeMode/ChangeMode';
 
 const Game = () => {
   const [matches, setMatches] = useState(25);
@@ -60,7 +61,6 @@ const Game = () => {
     setPlayerMatches(0);
   };
 
-
   useEffect(() => {
     if (matches === 0) {
       setWinner(matches === 0 && playerMatches % 2 === 0 && aiMatches % 2 !== 0 ? 'You' : 'AI');
@@ -69,10 +69,19 @@ const Game = () => {
     }
   }, [currentPlayer, matches, playerMatches]);
 
+  const changeCurrentModeToAi = () => {
+    setCurrentPlayer('AI')
+  };
+
+  const changeCurrentModeToPlayer = () => {
+    setCurrentPlayer('Your')
+  };
+
 
   return (
     <GameWrapper>
       <GameTitle>Match Game</GameTitle>
+      <ChangeMode onChangeModeToAi={changeCurrentModeToAi} onChangeModeToPlayer={changeCurrentModeToPlayer}/>
       {!winner && 
         <diV>
           <GamePlayer>{currentPlayer} turn</GamePlayer>
@@ -87,7 +96,7 @@ const Game = () => {
       ) : (
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
-      <p>Player matches: {playerMatches}</p>
+      <p>Your matches: {playerMatches}</p>
     </GameWrapper>
   );
 };
