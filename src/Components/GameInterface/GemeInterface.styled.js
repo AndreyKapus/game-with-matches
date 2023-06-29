@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const InterfaceWrapper = styled.div`
     margin-top: 20px;
-`
+`;
 
 export const GameMatches = styled.p`
     margin-top: 0px;

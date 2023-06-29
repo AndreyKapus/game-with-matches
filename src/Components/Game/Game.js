@@ -12,7 +12,8 @@ const Game = () => {
   const [playerMatches, setPlayerMatches] = useState(0);
   const [aiMatches, setAiMatches] = useState(0)
   const [disabled, setDisabled] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [isActivePlayer, setIsActivePlayer] = useState(false);
+  const [isActiveAi, setIsActiveAi] = useState(false);
 
     const handleMatchSelection = (numMatches) => {
     if (matches - numMatches >= 0 && !winner) {
@@ -71,28 +72,35 @@ const Game = () => {
   }, [currentPlayer, matches, playerMatches]);
 
   const changeCurrentModeToAi = () => {
+    handleRestart();
     setCurrentPlayer('AI');
-    setIsActive(true);
+    setIsActiveAi(true);
+    setIsActivePlayer(false);
   };
 
   const changeCurrentModeToPlayer = () => {
+    handleRestart();
     setCurrentPlayer('Your');
-    setIsActive(true)
+    setIsActivePlayer(true);
+    setIsActiveAi(false);
   };
-
 
   return (
     <GameWrapper>
       <GameTitle>Match Game</GameTitle>
-      <ChangeMode onChangeModeToAi={changeCurrentModeToAi} onChangeModeToPlayer={changeCurrentModeToPlayer} isActive={isActive}/>
+      <ChangeMode 
+        onChangeModeToAi={changeCurrentModeToAi} 
+        onChangeModeToPlayer={changeCurrentModeToPlayer} 
+        isActivePlayer={isActivePlayer}
+        isActiveAi={isActiveAi}/>
       {!winner && 
-        <diV>
+        <div>
           <GamePlayer>{currentPlayer} turn</GamePlayer>
             {currentPlayer === 'Your' ? 
               <Emoji emoji="smiling-face-with-sunglasses" size={40} lineHeight="inherit"/> :
               <Emoji emoji="robot" size={40} lineHeight="inherit"/>
             }
-        </diV>   
+        </div>   
       }
       {winner ? (
           <GameOver winner={winner} onRestartGame={handleRestart}/>
