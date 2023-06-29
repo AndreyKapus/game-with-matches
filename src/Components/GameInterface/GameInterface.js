@@ -1,5 +1,4 @@
-import {GameMatches, SelectionBtn, SelectionBtnWrapper, InterfaceWrapper, ClockEmojiWrapper, PlayerTurnEmoji} from './GemeInterface.styled'
-// import Emoji from 'react-emojis';
+import {GameMatches, SelectionBtn, SelectionBtnWrapper, InterfaceWrapper, ClockEmojiWrapper, PlayerTurnEmoji} from './GemeInterface.styled';
 
 const GameInterface = ({matches, onHandleMachesSelection, disabled}) => {
     return (

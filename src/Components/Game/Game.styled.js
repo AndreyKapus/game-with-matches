@@ -16,7 +16,7 @@ export const GameTitle = styled.h1`
 
 export const GamePlayer = styled.p`
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     font-size: 24px;
     font-weight: 700;
 `;
@@ -28,13 +28,13 @@ export const YourMatchesPar = styled.p`
 `;
 
 export const PlayerEmoji = styled.p`
-margin-top: 0px;
+margin-top: 20px;
 margin-bottom: 0px;
 font-size: 50px;
 `;
 
 export const AiEmoji = styled.p`
-margin-top: 0px;
+margin-top: 20px;
 margin-bottom: 0px;
 font-size: 50px;
 `

@@ -1,5 +1,4 @@
-import {GameOverTitle, Winner, RestartBtn, WinnerWrapper, GameOverTitleWrapper, GameOverWrapper, Emoji} from './GameOver.styled'
-// import Emoji from 'react-emojis';
+import {GameOverTitle, Winner, RestartBtn, WinnerWrapper, GameOverTitleWrapper, GameOverWrapper, Emoji} from './GameOver.styled';
 
 const GameOver = ({winner, onRestartGame}) => {
     return (
