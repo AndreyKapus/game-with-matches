@@ -12,7 +12,7 @@ const Game = () => {
   const [playerMatches, setPlayerMatches] = useState(0);
   const [aiMatches, setAiMatches] = useState(0)
   const [disabled, setDisabled] = useState(false);
-  const [isActivePlayer, setIsActivePlayer] = useState(false);
+  const [isActivePlayer, setIsActivePlayer] = useState(true);
   const [isActiveAi, setIsActiveAi] = useState(false);
 
     const handleMatchSelection = (numMatches) => {

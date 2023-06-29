@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 export const PlayerModeBtn = styled.button`
+background-color: #CE8FFF;
 width: 150px;
 height: 40px;
 border: none;
