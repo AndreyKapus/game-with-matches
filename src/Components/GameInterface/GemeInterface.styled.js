@@ -42,6 +42,7 @@ display: inline-block;
 animation-name: spin;
 animation-duration: 1000ms;
 animation-timing-function: linear;
+font-size: 40px;
 
 @keyframes spin {
     0% {
@@ -52,4 +53,10 @@ animation-timing-function: linear;
       transform: rotate(360deg);
     }
   }
+`;
+
+export const PlayerTurnEmoji = styled.p`
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 40px;
 `

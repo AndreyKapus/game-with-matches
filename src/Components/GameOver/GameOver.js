@@ -1,4 +1,4 @@
-import {GameOverTitle, Winner, RestartBtn, WinnerWrapper, GameOverTitleWrapper, GameOverWrapper} from './GameOver.styled'
+import {GameOverTitle, Winner, RestartBtn, WinnerWrapper, GameOverTitleWrapper, GameOverWrapper, Emoji} from './GameOver.styled'
 // import Emoji from 'react-emojis';
 
 const GameOver = ({winner, onRestartGame}) => {
@@ -6,12 +6,12 @@ const GameOver = ({winner, onRestartGame}) => {
         <GameOverWrapper>
           <GameOverTitleWrapper>
             <GameOverTitle>Game Over!</GameOverTitle>
-            <input/>
+            <Emoji role="img" aria-label="sheep" width='40px'>🏁</Emoji>
           </GameOverTitleWrapper>
           <WinnerWrapper>
             <Winner>Winner: {winner} {winner === 'You' ? 
-              <input/> :
-              <input/>}
+              <Emoji role="img" aria-label="power" >💪</Emoji> :
+              <Emoji role="img" aria-label="sad" >😞</Emoji>}
             </Winner>
           </WinnerWrapper>
 

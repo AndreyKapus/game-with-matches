@@ -51,3 +51,8 @@ export const RestartBtn = styled.button`
       transition-timing-function: linear;
 `;
 
+export const Emoji = styled.p`
+     font-size: 50px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+`

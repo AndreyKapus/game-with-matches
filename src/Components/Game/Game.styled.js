@@ -25,4 +25,16 @@ export const YourMatchesPar = styled.p`
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 18px;
+`;
+
+export const PlayerEmoji = styled.p`
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 50px;
+`;
+
+export const AiEmoji = styled.p`
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 50px;
 `

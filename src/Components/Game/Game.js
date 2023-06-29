@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
-import {GameTitle, GameWrapper, GamePlayer, YourMatchesPar} from './Game.styled';
+import {GameTitle, GameWrapper, GamePlayer, YourMatchesPar, PlayerEmoji, AiEmoji} from './Game.styled';
 // import Emoji from 'react-emojis';
 import ChangeMode from '../ChangeMode/ChangeMode';
 
@@ -103,8 +103,8 @@ const Game = () => {
         <div>
           <GamePlayer>{currentPlayer} turn</GamePlayer>
             {currentPlayer === 'Your' ? 
-              <input/> :
-              <input/>
+              <PlayerEmoji role="img" aria-label="power" >😎</PlayerEmoji> :
+              <AiEmoji role="img" aria-label="power" >🤖</AiEmoji>
             }
         </div>   
       }
