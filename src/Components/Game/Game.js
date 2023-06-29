@@ -25,7 +25,6 @@ const Game = () => {
         const takenByAiMatches = aiMatches + numMatches
         setAiMatches(takenByAiMatches)
       };
-      
       setCurrentPlayer(currentPlayer === 'Your' ? 'AI' : 'Your');
     }
   };
@@ -40,6 +39,9 @@ const Game = () => {
   };
 
   const calculateOptimalMove = (remainingMatches) => {
+    if(remainingMatches === 7 && aiMatches === 10) {
+      return 3;
+    };
     if (remainingMatches === 5 && playerMatches === 10) {
       return 1;
     }
@@ -113,6 +115,7 @@ const Game = () => {
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
       <YourMatchesPar>Your matches: {playerMatches}</YourMatchesPar>
+      <YourMatchesPar>AI matches: {aiMatches}</YourMatchesPar>
     </GameWrapper>
   );
 };
