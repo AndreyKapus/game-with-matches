@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
 import {GameTitle, GameWrapper, GamePlayer, YourMatchesPar} from './Game.styled';
-import Emoji from 'react-emojis';
+// import Emoji from 'react-emojis';
 import ChangeMode from '../ChangeMode/ChangeMode';
 
 const Game = () => {
@@ -103,8 +103,8 @@ const Game = () => {
         <div>
           <GamePlayer>{currentPlayer} turn</GamePlayer>
             {currentPlayer === 'Your' ? 
-              <Emoji emoji="smiling-face-with-sunglasses" size={40} lineHeight="inherit"/> :
-              <Emoji emoji="robot" size={40} lineHeight="inherit"/>
+              <input/> :
+              <input/>
             }
         </div>   
       }

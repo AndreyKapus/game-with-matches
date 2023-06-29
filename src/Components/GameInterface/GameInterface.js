@@ -1,13 +1,13 @@
 import {GameMatches, SelectionBtn, SelectionBtnWrapper, InterfaceWrapper, ClockEmojiWrapper} from './GemeInterface.styled'
-import Emoji from 'react-emojis';
+// import Emoji from 'react-emojis';
 
 const GameInterface = ({matches, onHandleMachesSelection, disabled}) => {
     return (
         <InterfaceWrapper>
             <GameMatches>Matches Remaining: {matches}</GameMatches>
             {disabled ? 
-            <ClockEmojiWrapper><Emoji emoji="twelve-oclock" size={30} lineHeight="inherit"/></ClockEmojiWrapper> : 
-            <Emoji emoji="backhand-index-pointing-right" size={30} lineHeight="inherit"/>}
+            <ClockEmojiWrapper><input/></ClockEmojiWrapper> : 
+            <input/>}
             <SelectionBtnWrapper>
                 <SelectionBtn disabled={disabled} onClick={() => onHandleMachesSelection(1)}>Take 1 Match</SelectionBtn>
                 <SelectionBtn disabled={disabled} onClick={() => onHandleMachesSelection(2)}>Take 2 Matches</SelectionBtn>
