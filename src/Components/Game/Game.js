@@ -57,10 +57,15 @@ const Game = () => {
 
   const handleRestart = () => {
     setMatches(25);
-    setCurrentPlayer('Your');
     setWinner(null);
     setAiMatches(0);
     setPlayerMatches(0);
+    if(isActiveAi) {
+      setCurrentPlayer('AI')
+    };
+    if(isActivePlayer) {
+      setCurrentPlayer('Your')
+    }
   };
 
   useEffect(() => {
