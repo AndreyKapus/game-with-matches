@@ -69,7 +69,8 @@ const Game = () => {
     } else if (currentPlayer === 'AI') {
       makeAIMove();
     }
-  }, [currentPlayer, matches, playerMatches]);
+  }, [aiMatches, currentPlayer, matches, playerMatches]);   // eslint-disable-line react-hooks/exhaustive-deps
+
 
   const changeCurrentModeToAi = () => {
     handleRestart();
