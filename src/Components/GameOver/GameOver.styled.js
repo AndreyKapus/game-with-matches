@@ -41,6 +41,7 @@ export const RestartBtn = styled.button`
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    font-family: FreeMono, monospace;
     :hover {
         transform: scale(1.1);
         background-color: #C377FF;

@@ -7,7 +7,7 @@ export const InterfaceWrapper = styled.div`
 export const GameMatches = styled.p`
     margin-top: 0px;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 20px;
 `;
 
 export const SelectionBtnWrapper = styled.div`
@@ -23,6 +23,7 @@ export const SelectionBtn = styled.button`
     color: #fff;
     border: none;
     border-radius: 5px;
+    font-family: FreeMono, monospace;
     &:not(:last-child) {
         margin-right: 15px;
     };

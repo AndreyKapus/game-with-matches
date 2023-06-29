@@ -11,11 +11,18 @@ export const GameTitle = styled.h1`
     padding-top: 20px;
     padding-bottom: 20px;
     color: #fff;
+    
 `;
 
 export const GamePlayer = styled.p`
     margin-top: 20px;
     margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
 `;
+
+export const YourMatchesPar = styled.p`
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 18px;
+`

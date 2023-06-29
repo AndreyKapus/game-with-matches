@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GameOver from '../GameOver/GameOver';
 import GameInterface from '../GameInterface/GameInterface';
-import {GameTitle, GameWrapper, GamePlayer} from './Game.styled';
+import {GameTitle, GameWrapper, GamePlayer, YourMatchesPar} from './Game.styled';
 import Emoji from 'react-emojis';
 import ChangeMode from '../ChangeMode/ChangeMode';
 
@@ -107,7 +107,7 @@ const Game = () => {
       ) : (
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
-      <p>Your matches: {playerMatches}</p>
+      <YourMatchesPar>Your matches: {playerMatches}</YourMatchesPar>
     </GameWrapper>
   );
 };
