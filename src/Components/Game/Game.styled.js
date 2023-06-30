@@ -11,7 +11,6 @@ export const GameTitle = styled.h1`
     padding-top: 20px;
     padding-bottom: 20px;
     color: #fff;
-    
 `;
 
 export const GamePlayer = styled.p`

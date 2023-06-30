@@ -13,7 +13,6 @@ const GameOver = ({winner, onRestartGame}) => {
               <Emoji role="img" aria-label="sad" >😞</Emoji>}
             </Winner>
           </WinnerWrapper>
-
           <RestartBtn onClick={onRestartGame}>Restart</RestartBtn>
         </GameOverWrapper>
     )

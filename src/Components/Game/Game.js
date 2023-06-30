@@ -115,7 +115,6 @@ const Game = () => {
         <GameInterface matches={matches} onHandleMachesSelection={handleMatchSelection} disabled={disabled}/>
       )}
       <YourMatchesPar>Your matches: {playerMatches}</YourMatchesPar>
-      <YourMatchesPar>AI matches: {aiMatches}</YourMatchesPar>
     </GameWrapper>
   );
 };

@@ -12,7 +12,6 @@ export const GameMatches = styled.p`
 
 export const SelectionBtnWrapper = styled.div`
     margin-top: 20px;
-
 `;
 
 export const SelectionBtn = styled.button`
